@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900 text-white min-h-screen;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl;
+  }
+  
+  .glass-button {
+    @apply px-6 py-3 rounded-xl bg-gradient-to-r from-primary-600 to-accent-600 
+           hover:from-primary-500 hover:to-accent-500 
+           transition-all duration-300 font-semibold text-white shadow-lg
+           hover:shadow-xl hover:scale-105 active:scale-95;
+  }
+  
+  .glass-input {
+    @apply bg-white/5 backdrop-blur-sm border border-white/20 rounded-lg px-4 py-2
+           text-white placeholder-white/50 focus:outline-none focus:ring-2 
+           focus:ring-primary-500 transition-all;
+  }
+  
+  .hand-skeleton-point {
+    @apply w-2 h-2 bg-primary-400 rounded-full shadow-lg shadow-primary-500/50;
+  }
+  
+  .hand-skeleton-line {
+    @apply stroke-accent-400 stroke-2;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-400 via-accent-400 to-primary-400 
+           bg-clip-text text-transparent;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8, 0 0 30px #38bdf8;
+  }
+  to {
+    text-shadow: 0 0 20px #e879f9, 0 0 30px #e879f9, 0 0 40px #e879f9;
+  }
+}
